@@ -9,7 +9,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchUserRole = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/user/role", {
+        const response = await fetch("/api/user/role", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         const data = await response.json();

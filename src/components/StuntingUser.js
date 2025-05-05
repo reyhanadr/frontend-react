@@ -63,7 +63,7 @@ const StuntingPage = () => {
   useEffect(() => {
       const fetchAnakData = async () => {
         try {
-          const response = await fetch("http://127.0.0.1:5000/anak/list", {
+          const response = await fetch("/api/anak/list", {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           });
           
@@ -134,7 +134,7 @@ const StuntingPage = () => {
       console.log("Submitting data:", requestData);
 
       // API call
-      const response = await fetch("http://127.0.0.1:5000/stunting/predict", {
+      const response = await fetch("/api/stunting/predict", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -192,7 +192,7 @@ const StuntingPage = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://127.0.0.1:5000/anak/tambah", {
+      const response = await fetch("/api/anak/tambah", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -18,7 +18,7 @@ const MpasiList = () => {
   const fetchMpasiList = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://127.0.0.1:5000/mpasi/list", {
+      const response = await axios.get("/api/mpasi/list", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -43,7 +43,7 @@ const MpasiList = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://127.0.0.1:5000/mpasi/add",
+        "/api/mpasi/add",
         newMpasi,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -64,7 +64,7 @@ const MpasiList = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://127.0.0.1:5000/mpasi/edit/${editMpasi.id}`,
+        `/api/mpasi/edit/${editMpasi.id}`,
         editMpasi,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -83,7 +83,7 @@ const MpasiList = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.delete(
-        `http://127.0.0.1:5000/mpasi/delete/${deleteMpasiId}`,
+        `/api/mpasi/delete/${deleteMpasiId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 

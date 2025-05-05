@@ -11,7 +11,7 @@ const MPASI = () => {
   useEffect(() => {
     const fetchMPASI = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/mpasi/list");
+        const response = await fetch("/api/mpasi/list");
         const data = await response.json();
         if (Array.isArray(data)) {
           setMpasiList(data);

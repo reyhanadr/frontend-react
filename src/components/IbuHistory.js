@@ -14,7 +14,7 @@ const IbuHistory = () => {
   useEffect(() => {
     const fetchPrediksi = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/ibu/history", {
+        const response = await fetch("/api/ibu/history", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
 
@@ -34,7 +34,7 @@ const IbuHistory = () => {
 
     const fetchUserRole = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/auth/profile", {
+        const response = await fetch("/api/auth/profile", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         const data = await response.json();
@@ -56,7 +56,7 @@ const IbuHistory = () => {
   const handleDeleteIbu = async () => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:5000/ibu/hapus/${selectedPrediction.id_prediction}`,
+        `/api/ibu/hapus/${selectedPrediction.id_prediction}`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
